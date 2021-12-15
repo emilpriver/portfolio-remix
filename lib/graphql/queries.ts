@@ -3,6 +3,7 @@ import { gql } from "graphql-request";
 export const getPosts = gql`
   query GetAllPosts {
     posts(orderBy: date_DESC) {
+      id
       title
       slug
       date
@@ -67,6 +68,18 @@ export const getPost = gql`
           url(transformation: { document: { output: { format: webp } } })
         }
       }
+    }
+  }
+`
+
+export const getRepos = gql`
+  query GetAllRepos {
+    repos(orderBy: date_DESC) {
+      date
+      description
+      link
+      title
+      id
     }
   }
 `

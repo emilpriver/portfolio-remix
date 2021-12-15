@@ -111,7 +111,7 @@ export default function Index() {
       >
         Source code
       </a>
-      <ul className="mb-20 list-decimal">
+      <ul className="mb-20 list-decimal w-full float-left">
         {spotify?.items?.map((track) => (
           <li key={track.id} className="mb-2">
             <h4 className="text-xl">
@@ -120,7 +120,7 @@ export default function Index() {
             <div className="flex">
               <div>
                 {track.artists.map((el, index) => (
-                  <span>
+                  <span key={el.id}>
                     <a href={el.external_urls.spotify} target="_blank">
                       {el.name}
                       {track.artists.length > index + 1 ? ", " : ""}

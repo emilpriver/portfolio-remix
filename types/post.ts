@@ -1,6 +1,7 @@
 import { ElementNode } from '@graphcms/rich-text-types';
 
 export type Post = {
+  id: string
   title: string
   slug: string
   createdAt: string
