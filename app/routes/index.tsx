@@ -44,6 +44,9 @@ export default function Index() {
           Software engineer with focus backend, love tech, serverless,
           distributed systems and trying new stuffs.
         </span>
+        <span className="font-light markdown text-lg">
+          I have open source some projects at <a href="https://github.com/emilpriver" target="_blank" className="underline">Github</a>. Working on adding more projects.
+        </span>
       </div>
       <h3 className="w-full mb-4 text-2xl">From the blog</h3>
       <div className="mb-20">

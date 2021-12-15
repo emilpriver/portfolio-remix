@@ -120,6 +120,9 @@ function Layout({ children }: { children: React.ReactNode }) {
               <Link className="mr-2" to="/">
                 Home
               </Link>
+              <Link className="mr-2" to="/projects">
+                Projects
+              </Link>
               <Link to="/about">About</Link>
             </li>
           </ul>

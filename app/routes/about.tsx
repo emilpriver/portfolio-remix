@@ -43,6 +43,8 @@ export default function About() {
           .
         </p>
       </div>
+      <h2 className="text-4xl">Open Source projects</h2>
+      <span>TBA</span>
     </div>
   );
 }
