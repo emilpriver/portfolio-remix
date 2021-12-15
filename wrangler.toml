@@ -1,0 +1,23 @@
+name = "remix-portfolio"
+type = "javascript"
+
+compatibility_date = "2021-12-13"
+
+zone_id = ""
+account_id = ""
+route = ""
+workers_dev = true
+
+[site]
+bucket = "./public"
+entry-point = "."
+
+[build]
+command = "npm run build:worker"
+watch_dir = "build/index.js"
+
+[build.upload]
+format="service-worker"
+
+[vars]
+GRAPHCMS_URL="https://api-eu-central-1.graphcms.com/v2/ckuxup7nc0u5i01z4h7abcror/master"
