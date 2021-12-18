@@ -2,7 +2,7 @@ import { GraphQLClient } from "graphql-request";
 
 declare const GRAPHCMS_URL: string
 
-export const client = (query: any, variables = {}) => fetch(GRAPHCMS_URL, {
+export const client = (query: any, variables = {}) => fetch(GRAPHCMS_URL ?? process.env.GRAPHCMS_URL ?? '', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
