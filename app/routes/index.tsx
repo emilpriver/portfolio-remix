@@ -41,7 +41,7 @@ export default function Index() {
       <div className="w-full mb-12 mt-2">
         <h1 className="font-medium mb-2 text-5xl font-serif">Emil Privér</h1>
         <span className="font-light markdown text-lg">
-          Software engineer with focus backend, love tech, serverless,
+          Softwaredeveloper with focus backend, love tech, serverless,
           distributed systems and trying new stuffs.
         </span>
         <span className="font-light markdown text-lg">
