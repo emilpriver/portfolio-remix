@@ -10,10 +10,10 @@ import { SpotifyTrack } from "../../types/spotify";
 import millisToMinutesAndSeconds from "~/utils/time";
 
 type Data = {
-  posts: Array<Post>
+  posts: Array<Post>;
   spotify: {
-    items: Array<SpotifyTrack>
-  }
+    items: Array<SpotifyTrack>;
+  };
 };
 
 export const loader: LoaderFunction = async () => {
@@ -45,7 +45,15 @@ export default function Index() {
           distributed systems and trying new stuffs.
         </span>
         <span className="font-light markdown text-lg">
-          I have open source some projects at <a href="https://github.com/emilpriver" target="_blank" className="underline">Github</a>. Working on adding more projects.
+          I have open source some projects at{" "}
+          <a
+            href="https://github.com/emilpriver"
+            target="_blank"
+            className="underline"
+          >
+            Github
+          </a>
+          . Working on adding more projects.
         </span>
       </div>
       <h3 className="w-full mb-4 text-2xl">From the blog</h3>
@@ -115,7 +123,9 @@ export default function Index() {
         {spotify?.items?.map((track) => (
           <li key={track.id} className="mb-2">
             <h4 className="text-xl">
-              {track.name} - ({millisToMinutesAndSeconds(track.duration_ms)})
+              <a href={track.external_urls.spotify} target="_blank">
+                {track.name} - ({millisToMinutesAndSeconds(track.duration_ms)})
+              </a>
             </h4>
             <div className="flex">
               <div>
