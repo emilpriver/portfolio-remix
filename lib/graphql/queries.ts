@@ -1,5 +1,20 @@
 import { gql } from "graphql-request";
 
+export const getPodcasts = gql`
+  query GetAllPodcasts {
+    podcasts(orderBy: date_DESC) {
+      id
+      appleLink
+      date
+      googleLink
+      language
+      spotifyLink
+      title
+      description
+    }
+  }
+`;
+
 export const getPosts = gql`
   query GetAllPosts {
     posts(orderBy: date_DESC) {
