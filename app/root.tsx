@@ -117,10 +117,10 @@ function Layout({ children }: { children: React.ReactNode }) {
         <nav aria-label="Main navigation" className="">
           <ul>
             <li>
-              <Link className="mr-2" to="/">
+              <Link prefetch="intent" className="mr-2" to="/">
                 Home
               </Link>
-              <Link to="/about">About</Link>
+              <Link prefetch="intent" to="/about">About</Link>
             </li>
           </ul>
         </nav>

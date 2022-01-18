@@ -10,11 +10,11 @@ import millisToMinutesAndSeconds from "~/utils/time";
 import { Podcast } from "../../types/podcast";
 
 type Data = {
-  posts: Array<Post>
-  podcasts: Array<Podcast>
+  posts: Array<Post>;
+  podcasts: Array<Podcast>;
   spotify: {
-    items: Array<SpotifyTrack>
-  }
+    items: Array<SpotifyTrack>;
+  };
 };
 
 export const loader: LoaderFunction = async () => {
@@ -23,7 +23,11 @@ export const loader: LoaderFunction = async () => {
 
   const spotify = await fetch(
     "https://spotify-list-most-played-songs.emilpriver.workers.dev?limit=10"
-  ).then((r) => r.json());
+  ).then((r) => {
+    if (r.ok) return r.json();
+
+    return []
+  });
 
   return json({ posts, spotify, podcasts });
 };
@@ -66,7 +70,9 @@ export default function Index() {
             key={el.slug}
           >
             <h3 className="mb-4 text-2xl text-gray-900 tracking-tight font-bold">
-              <Link to={`/${el.slug}`}>{el.title}</Link>
+              <Link prefetch="intent" to={`/${el.slug}`}>
+                {el.title}
+              </Link>
             </h3>
             <div className="mb-6 markdown">
               <p>{el.content.text?.split(" ").slice(0, 20).join(" ")}</p>
@@ -89,6 +95,7 @@ export default function Index() {
                 <circle cx="1" cy="1" r="1"></circle>
               </svg>
               <Link
+                prefetch="intent"
                 className="group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900 focus:ring-gray-500"
                 to={`/${el.slug}`}
               >
