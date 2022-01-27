@@ -8,3 +8,5 @@ node_modules
 .mf
 
 /app/styles/tailwind.css
+
+.idea
