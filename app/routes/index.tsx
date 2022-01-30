@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async () => {
   const { podcasts } = await client(getPodcasts);
 
   const spotify = await fetch(
-    "https://spotify-list-most-played-songs.emilpriver.workers.dev?limit=10&time_range=medium_term"
+    "https://spotify-list-most-played-songs.emilpriver.workers.dev?limit=10&type=artists&time_range=medium_term"
   ).then((r) => {
     if (r.ok) return r.json();
 
@@ -214,7 +214,7 @@ export default function Index() {
         ))}
       </div>
       <h3 className="w-full text-2xl">
-        My most played songs on Spotify this month.
+        My most played artists on Spotify
       </h3>
       <a
         href="https://github.com/emilpriver/Cloudflare-Workers-Spotify-most-played-song"
