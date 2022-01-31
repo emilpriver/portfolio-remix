@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async () => {
   const { podcasts } = await client(getPodcasts);
 
   const spotify = await fetch(
-    "https://spotify-list-most-played-songs.emilpriver.workers.dev?limit=10&type=tracks&time_range=medium_term"
+    "https://spotify-list-most-played-songs.emilpriver.workers.dev/top?limit=10&type=tracks&time_range=medium_term"
   ).then((r) => {
     if (r.ok) return r.json();
 
